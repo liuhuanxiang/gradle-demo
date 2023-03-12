@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group 'com.hx'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // https://mvnrepository.com/artifact/edu.internet2.middleware.grouper/grouper
+//    implementation group: 'edu.internet2.middleware.grouper', name: 'grouper', version: '4.0.3'
+    // https://mvnrepository.com/artifact/org.apache.activemq/artemis-jms-server
+    implementation group: 'org.apache.activemq', name: 'artemis-jms-server', version: '2.28.0'
+    // https://mvnrepository.com/artifact/org.apache.activemq/artemis-jms-server
+    implementation 'org.apache.activemq:artemis-jms-server:2.28.0'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+tasks.register('showRepos') {
+    def repositoryNames = repositories.collect { it.name }
+    doLast {
+        println "All repos:"
+        println repositoryNames
+    }
+}
