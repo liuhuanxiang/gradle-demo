@@ -38,6 +38,7 @@ Gradle自带的Maven源地址是国外的，该Maven源在国内的访问速度�
     示例：gradle --init-script C:\Personal\Study\Project\gradle-application\init.gradle -q showRepos
 2、把init.gradle文件放到USER_HOME/.gradle/目录下
     USER_HOME指的是用户目录，示例：C:\Users\liuhx\.gradle
+    tips:1、这个只能识别init.gradle这样命名的文件，不能改名；2、且在没有配置环境变量GRADLE_USER_HOME的前提下
 3、把以.gradle结尾的文件放到USER_HOME/.gradle/init.d/目录下
 4、把以.gradle结尾的文件放到GRADLE_HOME/init.d/目录下
     GRADLE_HOME指的是配置的环境变量，也就是GRADLE安装目录
